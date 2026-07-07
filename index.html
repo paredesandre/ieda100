@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ieda Tavares Psicologia | Psicoterapia para adolescentes e jovens adultos</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#241C35;
+    --violet-deep:#2A1D46;
+    --violet:#493172;
+    --violet-mid:#6B4E96;
+    --violet-soft:#EFE9F7;
+    --gold:#C89B3C;
+    --gold-light:#E4C170;
+    --ivory:#FBF8F3;
+    --line: rgba(36,28,53,0.12);
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--ivory);
+    font-weight:400;
+    line-height:1.65;
+  }
+
+  h1,h2,h3,.display-font{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:'Work Sans', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--gold);
+  }
+
+  a{ text-decoration:none; }
+
+  /* ---------- NAV ---------- */
+  .navbar{
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+    padding-top:1rem;
+    padding-bottom:1rem;
+  }
+  .brand-mark{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.4rem;
+    color:var(--violet-deep);
+  }
+  .brand-sub{
+    font-size:0.62rem;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:block;
+    margin-top:-4px;
+  }
+  .nav-link-custom{
+    color:var(--ink) !important;
+    font-size:0.92rem;
+    font-weight:500;
+    margin:0 0.9rem;
+  }
+  .nav-link-custom:hover{ color:var(--violet); }
+
+  .btn-gold{
+    background:var(--gold);
+    color:var(--violet-deep);
+    border:none;
+    font-weight:600;
+    padding:0.65rem 1.6rem;
+    border-radius:2px;
+    letter-spacing:0.02em;
+    transition:background 0.2s ease, transform 0.2s ease;
+  }
+  .btn-gold:hover{
+    background:var(--gold-light);
+    color:var(--violet-deep);
+    transform:translateY(-1px);
+  }
+  .btn-outline-gold{
+    border:1px solid var(--gold);
+    color:var(--violet-deep);
+    font-weight:600;
+    padding:0.6rem 1.5rem;
+    border-radius:2px;
+    background:transparent;
+  }
+  .btn-outline-gold:hover{
+    background:var(--gold);
+    color:var(--violet-deep);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(155deg, var(--violet-deep) 0%, var(--violet) 78%);
+    color:#F3EEFA;
+    overflow:hidden;
+    padding:6rem 0 7rem;
+  }
+  .hero-spiral{
+    position:absolute;
+    right:-8%;
+    top:50%;
+    transform:translateY(-50%);
+    width:640px;
+    max-width:70vw;
+    opacity:0.5;
+  }
+  .hero .eyebrow{ color:var(--gold-light); }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.2vw, 3.3rem);
+    color:#fff;
+    max-width:640px;
+  }
+  .hero p.lead-text{
+    max-width:520px;
+    color:#DCD2EE;
+    font-size:1.08rem;
+  }
+  .crp-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    border:1px solid rgba(228,193,112,0.45);
+    padding:0.35rem 0.9rem;
+    font-size:0.78rem;
+    color:var(--gold-light);
+    border-radius:100px;
+    margin-bottom:1.4rem;
+  }
+
+  /* ---------- SECTION GENERAL ---------- */
+  section{ padding:5.5rem 0; }
+  .section-alt{ background:var(--violet-soft); }
+  .section-deep{ background:var(--violet-deep); color:#F3EEFA; }
+  .section-title{
+    font-size:clamp(1.7rem, 2.6vw, 2.3rem);
+    margin-bottom:1.1rem;
+  }
+  .rule{
+    width:56px;
+    height:3px;
+    background:var(--gold);
+    margin-bottom:1.6rem;
+  }
+
+  /* ---------- SOBRE ---------- */
+  .about-frame{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:4px;
+    background:linear-gradient(160deg, var(--violet) 0%, var(--violet-deep) 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .about-frame svg{ width:64%; opacity:0.9; }
+  .about-frame::after{
+    content:"";
+    position:absolute;
+    inset:14px;
+    border:1px solid rgba(228,193,112,0.4);
+    border-radius:2px;
+    pointer-events:none;
+  }
+  .quote-block{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--violet-deep);
+    border-left:3px solid var(--gold);
+    padding-left:1.2rem;
+    margin:1.8rem 0;
+  }
+
+  /* ---------- COMO TRABALHO ---------- */
+  .approach-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-top:3px solid var(--gold);
+    padding:2rem 1.7rem;
+    height:100%;
+    transition:transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .approach-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px -18px rgba(42,29,70,0.35);
+  }
+  .approach-card h3{
+    font-size:1.15rem;
+    color:var(--violet-deep);
+    margin-bottom:0.7rem;
+  }
+  .approach-card p{
+    font-size:0.94rem;
+    color:#4a415c;
+    margin-bottom:0;
+  }
+  .approach-icon{
+    width:38px; height:38px;
+    margin-bottom:1.1rem;
+  }
+
+  /* ---------- PROCESSOS DA VIDA ---------- */
+  .journey-wrap{ position:relative; }
+  .journey-tabs .nav-link{
+    color:var(--ink);
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.15rem;
+    border:none;
+    border-bottom:2px solid transparent;
+    background:transparent;
+    padding:0.6rem 0.2rem;
+    margin-right:2.2rem;
+  }
+  .journey-tabs .nav-link.active{
+    color:var(--violet-deep);
+    border-bottom:2px solid var(--gold);
+    background:transparent;
+  }
+  .journey-list{ list-style:none; padding:0; margin:1.6rem 0 0; }
+  .journey-list li{
+    position:relative;
+    padding-left:1.6rem;
+    margin-bottom:0.8rem;
+    font-size:1rem;
+    color:#3a3150;
+  }
+  .journey-list li::before{
+    content:"";
+    position:absolute;
+    left:0; top:0.55em;
+    width:7px; height:7px;
+    background:var(--gold);
+    border-radius:50%;
+  }
+
+  /* ---------- FAQ ---------- */
+  .accordion-item{
+    background:transparent;
+    border:none;
+    border-bottom:1px solid var(--line);
+  }
+  .accordion-button{
+    background:transparent;
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:1.05rem;
+    color:var(--violet-deep);
+    padding:1.3rem 0;
+    box-shadow:none !important;
+  }
+  .accordion-button:not(.collapsed){
+    background:transparent;
+    color:var(--violet-deep);
+  }
+  .accordion-button::after{
+    filter:invert(56%) sepia(53%) saturate(455%) hue-rotate(358deg) brightness(92%) contrast(88%);
+  }
+  .accordion-body{
+    padding:0 0 1.4rem;
+    color:#4a415c;
+    font-size:0.96rem;
+  }
+  .faq-note{
+    font-size:0.8rem;
+    color:#8a7fa0;
+    margin-top:1.4rem;
+    font-style:italic;
+  }
+
+  /* ---------- ATENDIMENTO ---------- */
+  .contact-card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(228,193,112,0.25);
+    padding:1.8rem;
+    height:100%;
+  }
+  .contact-card h4{
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    color:var(--gold-light);
+    margin-bottom:0.9rem;
+  }
+  .contact-card p{ color:#DCD2EE; font-size:0.94rem; margin-bottom:0.4rem; }
+  .contact-icon{
+    width:20px; height:20px;
+    margin-right:0.6rem;
+    flex-shrink:0;
+  }
+  .map-frame{
+    border:1px solid rgba(228,193,112,0.25);
+    height:100%;
+    min-height:260px;
+    overflow:hidden;
+  }
+  .map-frame iframe{ width:100%; height:100%; border:0; filter:grayscale(0.15); }
+
+  footer{
+    background:var(--violet-deep);
+    color:#B7A9D6;
+    padding:2.2rem 0;
+    border-top:1px solid rgba(228,193,112,0.15);
+    font-size:0.85rem;
+  }
+  footer a{ color:var(--gold-light); }
+
+  @media (max-width: 767px){
+    .hero-spiral{ opacity:0.22; width:420px; }
+    section{ padding:3.8rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex flex-column" href="#topo">
+      <span class="brand-mark">Ieda Tavares</span>
+      <span class="brand-sub">Psicologia</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <div class="d-flex flex-column flex-lg-row align-items-lg-center">
+        <a class="nav-link-custom" href="#sobre">Sobre mim</a>
+        <a class="nav-link-custom" href="#trabalho">Como trabalho</a>
+        <a class="nav-link-custom" href="#processos">Processos da vida</a>
+        <a class="nav-link-custom" href="#faq">Perguntas frequentes</a>
+        <a class="nav-link-custom" href="#atendimento">Atendimento</a>
+        <a class="btn btn-gold mt-3 mt-lg-0 ms-lg-3" href="#atendimento">Agende sua sessão</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="topo">
+  <svg class="hero-spiral" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M200 200 C 200 180, 220 170, 235 180 C 258 195, 255 230, 225 245 C 185 264, 138 245, 122 200 C 103 148, 138 90, 200 78 C 272 64, 335 112, 345 190 C 356 278, 292 350, 200 355"
+      stroke="#E4C170" stroke-width="1.4" stroke-linecap="round"/>
+  </svg>
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="crp-pill">Ieda Tavares · Psicóloga CRP 08/39325</span>
+        <h1 class="mb-4">Psicoterapia para adolescentes a partir de 14 anos e jovens adultos</h1>
+        <p class="lead-text mb-4">Um espaço de escuta, autoconhecimento e desenvolvimento emocional — construído no ritmo de cada pessoa.</p>
+        <a href="#atendimento" class="btn btn-gold">Agende sua sessão</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 order-lg-2">
+        <div class="about-frame">
+          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="70" stroke="#E4C170" stroke-width="1" opacity="0.6"/>
+            <circle cx="100" cy="100" r="48" stroke="#E4C170" stroke-width="1" opacity="0.5"/>
+            <path d="M100 30 C 100 30, 130 60, 100 100 C 70 140, 100 170, 100 170" stroke="#F3EEFA" stroke-width="1.3"/>
+          </svg>
+        </div>
+      </div>
+      <div class="col-lg-7 order-lg-1">
+        <span class="eyebrow d-block mb-2" style="color:var(--violet);">Sobre mim</span>
+        <h2 class="section-title">Olá, eu sou Ieda Tavares</h2>
+        <div class="rule"></div>
+        <p>Sou psicóloga e atuo principalmente com adolescentes a partir dos 14 anos e jovens adultos. Meu trabalho é voltado ao desenvolvimento emocional, ao autoconhecimento e à compreensão dos processos internos que influenciam a forma como pensamos, sentimos e nos relacionamos.</p>
+        <p class="quote-block">Muitos sofrimentos não surgem de forma isolada — eles se constroem ao longo das experiências, vínculos e formas de adaptação desenvolvidas ao longo da vida.</p>
+        <p>Por isso, a psicoterapia oferece um espaço de escuta, reflexão e construção de consciência sobre si mesmo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO TRABALHO -->
+<section id="trabalho" class="section-alt">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <span class="eyebrow d-block mb-2" style="color:var(--violet);">Abordagem</span>
+        <h2 class="section-title">Como trabalho</h2>
+        <div class="rule"></div>
+        <p class="mb-0">Minha prática clínica é fundamentada na Psicologia Analítica, na Gestalt-terapia e em recursos de Regulação Emocional — integrados de forma flexível, considerando a singularidade de cada pessoa.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="approach-card">
+          <svg class="approach-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="16" stroke="#C89B3C" stroke-width="1.4"/><circle cx="20" cy="20" r="7" stroke="#C89B3C" stroke-width="1.4"/></svg>
+          <h3>Psicologia Analítica</h3>
+          <p>Abordagem que considera a vida psíquica em profundidade, incluindo conteúdos conscientes e inconscientes, sonhos, símbolos e narrativas pessoais como caminhos para ampliar o autoconhecimento.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="approach-card">
+          <svg class="approach-icon" viewBox="0 0 40 40" fill="none"><path d="M8 28 C 8 14, 32 14, 32 28" stroke="#C89B3C" stroke-width="1.4"/><circle cx="20" cy="12" r="4" stroke="#C89B3C" stroke-width="1.4"/></svg>
+          <h3>Gestalt-terapia</h3>
+          <p>Atenção à experiência presente, às emoções e à maneira como construímos contato conosco, com os outros e com o mundo.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="approach-card">
+          <svg class="approach-icon" viewBox="0 0 40 40" fill="none"><path d="M6 22 L14 22 L18 12 L23 30 L27 20 L34 20" stroke="#C89B3C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Regulação Emocional</h3>
+          <p>Desenvolvimento de recursos para lidar com ansiedade, autocobrança e sofrimento emocional de forma mais consciente e equilibrada.</p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-5 mb-0" style="max-width:760px;">Cada história possui seu próprio ritmo, suas necessidades e desafios. Por isso, o acompanhamento é construído de maneira personalizada, respeitando o momento de vida, os recursos emocionais e as demandas de cada cliente.</p>
+  </div>
+</section>
+
+<!-- PROCESSOS DA VIDA -->
+<section id="processos">
+  <div class="container">
+    <span class="eyebrow d-block mb-2" style="color:var(--violet);">Processos da vida</span>
+    <h2 class="section-title">Questões que podem surgir ao longo da adolescência e da vida adulta</h2>
+    <div class="rule"></div>
+
+    <div class="journey-wrap mt-4">
+      <ul class="nav journey-tabs" id="journeyTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tab-adolescentes" data-bs-toggle="tab" data-bs-target="#pane-adolescentes" type="button" role="tab">Adolescentes (14+)</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab-jovens" data-bs-toggle="tab" data-bs-target="#pane-jovens" type="button" role="tab">Jovens adultos</button>
+        </li>
+      </ul>
+
+      <div class="tab-content pt-2">
+        <div class="tab-pane fade show active" id="pane-adolescentes" role="tabpanel">
+          <p class="mb-0" style="max-width:640px;">A adolescência é um período de mudanças, descobertas e desafios. Muitas vezes, as dificuldades não aparecem de forma clara e podem se manifestar como:</p>
+          <ul class="journey-list">
+            <li>Ansiedade e insegurança</li>
+            <li>Dificuldades de autoestima</li>
+            <li>Conflitos familiares</li>
+            <li>Dificuldades escolares</li>
+            <li>Sensação de não pertencimento</li>
+            <li>Questionamentos sobre identidade</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="pane-jovens" role="tabpanel">
+          <p class="mb-0" style="max-width:640px;">A transição para a vida adulta traz novas responsabilidades, escolhas e expectativas. Algumas questões comuns nesse período incluem:</p>
+          <ul class="journey-list">
+            <li>Ansiedade e sobrecarga emocional</li>
+            <li>Dificuldades nos relacionamentos</li>
+            <li>Autoconhecimento e construção da própria identidade</li>
+            <li>Escolhas profissionais e acadêmicas</li>
+            <li>Excesso de cobrança e perfeccionismo</li>
+            <li>Busca por desenvolvimento pessoal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section-alt">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <span class="eyebrow d-block mb-2" style="color:var(--violet);">Tire suas dúvidas</span>
+        <h2 class="section-title">Perguntas frequentes</h2>
+        <div class="rule"></div>
+
+        <div class="accordion" id="faqAccordion">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Como funciona a primeira sessão?</button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Na primeira sessão conversamos sobre o que trouxe você até a terapia, sua história e suas expectativas. É um momento de acolhimento, para que possamos entender juntos qual o melhor caminho a seguir.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Qual a frequência dos atendimentos?</button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">O mais comum é o acompanhamento semanal, o que ajuda a manter a continuidade do processo terapêutico. A frequência pode ser ajustada conforme a necessidade de cada momento.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Qual a duração das sessões?</button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Cada sessão tem duração de 50 minutos.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Como funciona o atendimento online?</button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">O atendimento online acontece por videochamada, em plataforma segura, com a mesma qualidade e sigilo do atendimento presencial — para todo o Brasil e exterior.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">A psicoterapia é sigilosa?</button>
+            </h3>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Sim. O sigilo é um princípio ético fundamental da profissão, previsto no Código de Ética do Psicólogo. Tudo o que é falado em sessão é confidencial.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">Preciso estar passando por uma crise para procurar psicoterapia?</button>
+            </h3>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Não. A psicoterapia também é um espaço de autoconhecimento, prevenção e desenvolvimento pessoal, útil em qualquer momento da vida — não apenas em situações de crise.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">Qual o valor das sessões?</button>
+            </h3>
+            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Os valores são combinados individualmente. Entre em contato pelo WhatsApp para mais informações.</div>
+            </div>
+          </div>
+
+        </div>
+        <p class="faq-note">* Estas respostas foram elaboradas como sugestão de conteúdo, já que o material original continha apenas as perguntas. Recomendo revisar e ajustar os textos antes de publicar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATENDIMENTO -->
+<section id="atendimento" class="section-deep">
+  <div class="container">
+    <span class="eyebrow d-block mb-2">Atendimento</span>
+    <h2 class="section-title" style="color:#fff;">Presencial em Curitiba e online para todo o Brasil e exterior</h2>
+    <div class="rule"></div>
+
+    <div class="row g-4 mt-2">
+      <div class="col-md-6 col-lg-4">
+        <div class="contact-card">
+          <h4>Endereço</h4>
+          <p class="d-flex"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#E4C170" stroke-width="1.4"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            Rua Deputado Heitor Alencar Furtado, 3870 — Sala 303<br>Curitiba - Paraná - Brasil</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="contact-card">
+          <h4>Contato</h4>
+          <p class="d-flex"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#E4C170" stroke-width="1.4"><path d="M4 5c0-1 1-2 2-2h1l2 4-2 2c1 3 3 5 6 6l2-2 4 2v1c0 1-1 2-2 2-7 0-13-6-13-13z"/></svg>
+            +55 41 99292-0203</p>
+          <a href="https://wa.me/554199292203" class="btn btn-gold mt-3">Agendar pelo WhatsApp</a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=Rua+Deputado+Heitor+Alencar+Furtado,+3870,+Curitiba,+PR&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <span>© 2026 Ieda Tavares Psicologia · CRP 08/39325</span>
+    <a href="#" aria-label="Instagram">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E4C170" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
